@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/caption-craft/static/css/main.1e054be7.css",
+    "main.js": "/caption-craft/static/js/main.72c63444.js",
+    "static/js/787.a102bc2c.chunk.js": "/caption-craft/static/js/787.a102bc2c.chunk.js",
+    "static/media/tile_background.png": "/caption-craft/static/media/tile_background.7a00e2978fcc867a05b4.png",
+    "index.html": "/caption-craft/index.html",
+    "main.1e054be7.css.map": "/caption-craft/static/css/main.1e054be7.css.map",
+    "main.72c63444.js.map": "/caption-craft/static/js/main.72c63444.js.map",
+    "787.a102bc2c.chunk.js.map": "/caption-craft/static/js/787.a102bc2c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1e054be7.css",
+    "static/js/main.72c63444.js"
+  ]
+}
