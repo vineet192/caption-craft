@@ -1,0 +1,9 @@
+steps:
+# Build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/ub-2023-hack/caption-craft-image', '.']
+# Push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/ub-2023-hack/caption-craft-image']
+images:
+- gcr.io/ub-2023-hack/caption-craft-image
