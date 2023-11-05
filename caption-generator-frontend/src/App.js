@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import './App.css';
 import { useRef, useState } from 'react';
-import { FaCopy } from 'react-icons/fa';
 
 function App() {
 
@@ -13,6 +12,14 @@ function App() {
   const [captions, setCaptions] = useState([])
   const [isGenerating, setGenerating] = useState(false)
   const [selectedmood, setSelectedmood] = useState([false, false, false, false])
+  const captionsListRef = useRef(null)
+
+  useEffect(() => {
+    if (captionsListRef && captionsListRef.current) {
+      captionsListRef.current.scrollIntoView({ behavior: "smooth" })
+    }
+
+  }, [isGenerating])
 
   const onClickHandler = event => {
     hiddenFileInput.current.click();
@@ -38,28 +45,29 @@ function App() {
 
     setGenerating(true)
     const formdata = new FormData()
-    formdata.append('mood',mood)
-    formdata.append('img',hiddenFileInput.current.files[0])
+    formdata.append('mood', mood)
+    formdata.append('img', hiddenFileInput.current.files[0])
 
     const requestOptions = {
       method: 'POST',
-      // headers: { 'Content-Type': 'multipart/form-data' },
       body: formdata,
-      // mode: 'no-cors',
       redirect: 'follow'
     };
 
     fetch("https://caption-craft-7sv56ny6rq-uc.a.run.app/captions", requestOptions)
       .then(response => {
         console.log(response)
-        return response.json()})
+        return response.json()
+      })
       .then(data => {
 
         let res_string = data.captions
         res_string = res_string.replace('\n+', '\n')
         let temp = res_string.split('\n')
 
-        console.log('temp = '+temp)
+        temp = temp.filter(capn => capn !== '')
+
+        console.log('temp = ' + temp)
 
         setCaptions([...temp]);
         setGenerating(false);
@@ -68,7 +76,7 @@ function App() {
       .catch(error => {
         setCaptions([]);
         setGenerating(false)
-        console.log("Generating failed "+error)
+        console.log("Generating failed " + error)
       })
 
   }
@@ -81,7 +89,7 @@ function App() {
     <div className='app-container'>
       <div className='big-header'>
 
-        <h1 className="header-line mb-5">Let's Unlock Your Instagram Potential ...</h1>
+        <h1 className="header-line mb-5">Let's Unlock Your Instagram Potential!</h1>
 
         <span onClick={onClickHandler} className="my-button btn btn-primary">
           Upload Image
@@ -131,11 +139,14 @@ function App() {
         </div>
       }
 
-      {captions.length > 0 &&
-        <div className='caption-list'>
-          <h3 className="mb-5">Here you go - </h3>
+      {captions.length > 0 && !isGenerating &&
+        <div className='caption-list' ref={captionsListRef}>
           <ul className='my-ul'>
-            {captions.map((item, id) => (<li key={id}>{item} <FaCopy onClick={() => handleCopyClick(item)} /></li>))}
+            <h3 className="mb-5">Click to copy, happy posting!</h3>
+            {captions.map((item, id) =>
+            (<li key={id} onClick={(event) => navigator.clipboard.writeText(event.currentTarget.innerText)}>{item}</li>
+
+            ))}
           </ul>
         </div>
       }

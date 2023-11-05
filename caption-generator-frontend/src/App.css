@@ -1,205 +1,255 @@
 @import url(./colors.css);
 
 .app-container {
-    overflow-x: hidden;
-    width: 100%;
-    position: relative;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 .big-header {
-    width: 100%;
-    height: 75vh;
-    /* background-color: var(--header-color); */
-    background-image: url('/public/tile_background.png');
-    position: relative !important;
+  width: 100vw;
+  height: 75vh;
+  background-image: url('/public/tile_background.png');
+  position: relative !important;
 }
 
 .header-line {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: var(--buttons);
-    font-weight: 900;
-    /* font-size: clamp(0,2vw+0.75rem,0); */
-    font-size: 60px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--buttons);
+  font-weight: 900;
+  font-size: 3.2vmax;
 }
 
 .my-button {
-    background-color: var(--buttons);
-    border-color: var(--buttons);position: absolute;
-    width: fit-content;
-    height: 100px;
-    border-radius: 50px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 14px 28px;
-    font-size: 40px;
-    font-weight: bolder;
-    cursor: pointer;
-    text-align: center;
+  background-color: var(--buttons);
+  border-color: var(--buttons);
+  position: absolute;
+  width: fit-content;
+  height: 100px;
+  border-radius: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 14px 28px;
+  font-size: 2.7vmax;
+  font-weight: bolder;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 50px;
 }
 
 .img-fluid {
-    height: 300px;
-    width: 400px;
-    float: right;
-    margin: 50px;
-    border-radius: 50px;
+  height: 300px;
+  width: 400px;
+  float: right;
+  margin: 50px;
+  border-radius: 50px;
+}
+
+img {
+  color: var(--glow-color);
+  border: 5px solid var(--glow-color);
+  border-radius: 0.45em;
+  background: none;
+  perspective: 3em;
+  font-size: 2em;
+  font-weight: 900;
+  letter-spacing: 1em;
+
+  -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  animation: border-flicker 2s linear infinite;
 }
 
 .file-input {
-    display: none;
+  display: none;
 }
 
 .preview-container {
-    width: 100vw;
-    display: flex;
-    margin-bottom: 10px;
+  width: 100vw;
+  display: flex;
+  margin-bottom: 10px;
 }
 
 .preview-image-container {
-    display: flex;
-    float: left;
-    margin: 50px;
-    margin-top: 100px;
-    width: 49%;
-    justify-content: center;
+  display: flex;
+  float: left;
+  margin: 50px;
+  margin-top: 100px;
+  width: 49%;
+  justify-content: center;
 }
 
 .preview-image {
-    height: auto;
-    width: auto;
-    max-width: 40vw;
-    max-height: 50vh;
+  height: auto;
+  width: auto;
+  max-width: 40vw;
+  max-height: 50vh;
 }
 
 .card-container {
-    width: 49%;
-    /* float: left; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* align-items: center; */
+  width: 49%;
+  /* float: left; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* align-items: center; */
 }
 
 .custom-card {
-    width: fit-content;
-    margin: 50px;
-    /* margin-top: 100px; */
-    color: var(--buttons);
-    /* font-size: 40px; */
+  width: fit-content;
+  margin: 50px;
+  /* margin-top: 100px; */
+  color: var(--buttons);
+  /* font-size: 40px; */
 }
 
 .emoji {
-    font-size: 60px;
-    border: none;
-    background-color: white;
+  font-size: 60px;
+  border: none;
+  background-color: white;
 }
 
 .my-button-generate {
-    background-color: var(--buttons);
-    border-color: var(--buttons);
-    width: fit-content;
-    height: 80px;
-    border-radius: 50px;
-    padding: 14px 28px;
-    font-size: 30px;
-    font-weight: bolder;
-    cursor: pointer;
-    text-align: center;
-    
+  background-color: var(--buttons);
+  border-color: var(--buttons);
+  width: fit-content;
+  height: 80px;
+  border-radius: 50px;
+  padding: 14px 28px;
+  font-size: 30px;
+  font-weight: bolder;
+  cursor: pointer;
+  text-align: center;
+
 }
 
 .caption-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    /* align-items: center; */
-    margin: 50px;
-    margin-top: 20px;
-    margin-bottom: 100px;
-    padding: 20px;
-    width: 100%;
-    height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  margin-left: 50px;
+  margin-top: 20px;
+  margin-bottom: 100px;
+  padding: 20px;
+  width: fit-content;
+  height: fit-content;
+  overflow-x: hidden;
 }
 
 .my-ul li {
-    padding: 20px;
-    margin: 30px;
-    list-style: none;
+  padding: 20px;
+  margin: 30px;
+  list-style: none;
 
-    width: fit-content;
-    background-color: var(--header-color);
-    border-radius: 50px;
+  width: fit-content;
+  background-color: var(--header-color);
+  border-radius: 50px;
+  
+  background-color: #fff;
+  border: 0;
+  outline: 0;
+  padding: 1.5rem 2rem;
+  font-size: 1rem;
+  font-family: monospace;
+  box-shadow: 0px 5px 10px var(--glow-color);
+  transition: all 0.3s;
+  cursor: pointer;
+  border-radius: 5px;
+  border-bottom: 4px solid #d9d9d9;
+}
+
+.my-ul li:hover {
+  box-shadow: 0px 15px 25px -5px #0057ab;
+  transform: scale(1.03);
+}
+.my-ul li:active {
+  box-shadow: 0px 4px 8px #0065c8;
+  transform: scale(0.98);
 }
 
 .lds-heart {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    transform: rotate(45deg);
-    transform-origin: 40px 40px;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  transform: rotate(45deg);
+  transform-origin: 40px 40px;
+}
+
+.lds-heart div {
+  top: 32px;
+  left: 32px;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background: #cb3838;
+  animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.lds-heart div:after,
+.lds-heart div:before {
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: #cb3838;
+}
+
+.lds-heart div:before {
+  left: -24px;
+  border-radius: 50% 0 0 50%;
+}
+
+.lds-heart div:after {
+  top: -24px;
+  border-radius: 50% 50% 0 0;
+}
+
+@keyframes lds-heart {
+  0% {
+    transform: scale(0.95);
   }
-  .lds-heart div {
-    top: 32px;
-    left: 32px;
-    position: absolute;
-    width: 32px;
-    height: 32px;
-    background: #cb3838;
-    animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+
+  5% {
+    transform: scale(1.1);
   }
-  .lds-heart div:after,
-  .lds-heart div:before {
-    content: " ";
-    position: absolute;
-    display: block;
-    width: 32px;
-    height: 32px;
-    background: #cb3838;
+
+  39% {
+    transform: scale(0.85);
   }
-  .lds-heart div:before {
-    left: -24px;
-    border-radius: 50% 0 0 50%;
+
+  45% {
+    transform: scale(1);
   }
-  .lds-heart div:after {
-    top: -24px;
-    border-radius: 50% 50% 0 0;
+
+  60% {
+    transform: scale(0.95);
   }
-  @keyframes lds-heart {
-    0% {
-      transform: scale(0.95);
-    }
-    5% {
-      transform: scale(1.1);
-    }
-    39% {
-      transform: scale(0.85);
-    }
-    45% {
-      transform: scale(1);
-    }
-    60% {
-      transform: scale(0.95);
-    }
-    100% {
-      transform: scale(0.9);
-    }
+
+  100% {
+    transform: scale(0.9);
   }
-  
-  footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 50px;
-    width: 100%;
-    /* margin-top: 100px; */
-    background-image: url('/public/tile_background.png');
-    color: var(--buttons);
-    font-size: medium;
-    font-weight: 900;
-    text-align: center;
-  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: fit-content;
+  width: 100%;
+  /* margin-top: 100px; */
+  background-image: url('/public/tile_background.png');
+  color: var(--buttons);
+  font-size: medium;
+  font-weight: 900;
+  text-align: center;
+}

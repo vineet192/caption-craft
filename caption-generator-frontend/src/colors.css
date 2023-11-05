@@ -1,4 +1,5 @@
 :root {
     --header-color: #6998AB;
-    --buttons: #1A374D
+    --buttons: #1A374D;
+    --glow-color: hsl(202, 100%, 69%);
 }
